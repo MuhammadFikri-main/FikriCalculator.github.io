@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Loan Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Mortgage Loan Calculator</h1>
+    </header>
+    <div class="container">
+        <div class="navbar">
+            <h4>MFikri</h4>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Profile</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                    </ul>
+                </nav>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <div class="content">
+                    <form id="form" action="" method="post">
+                        <h4>Loan Details</h4>
+                        <!-- Input fields -->
+                        <div class="contentFlex">
+                            <div class="contentLeft">
+                                <div class="content-item">
+                                    <p>Loan Amount (RM)</p>
+                                    <input type="number" id="loanAmount" placeholder="Loan Amount" title="Enter the loan amount you want to borrow. This represents the principal amount of the loan." required>
+                                    <p>Interest Rate (%)</p>
+                                    <input type="number" id="interestRate" placeholder="Interest Rate" title="Enter the interest rate provided by the bank. This represents the annual interest rate for the loan.">
+                                    <p>Loan Term (Year)</p>
+                                    <input type="number" id="loanTerm" placeholder="Loan Term" title="Enter the loan term in years. This represents the number of years over which the loan will be repaid.">
+                                    <p>Down Payment (RM)</p>
+                                    <input type="number" id="downPayment" placeholder="Down Payment" title="Enter the down payment amount in RM. This represents the initial payment made towards the loan.">
+                                </div>
+                            </div>
+                            <div class="contentRight">
+                                <div class="content-item">
+                                    <p>Property Tax Rate (%)</p>
+                                    <input type="number" id="propertyTaxRate" placeholder="Property Tax Rate" title="Enter the property tax rate as a percentage. This represents the annual rate at which property tax is calculated.">
+                                    <p>Homeowners Insurance (RM)</p>
+                                    <input type="number" id="homeownersInsurance" placeholder="Homeowners Insurance" title="Enter the amount of homeowners insurance in RM. This represents the annual insurance premium for the property.">
+                                    <p>Private Mortgage Insurance (RM)</p>
+                                    <input type="number" id="pmi" placeholder="Private Mortgage Insurance" title="Enter the amount of private mortgage insurance in RM. This represents the insurance premium for the mortgage loan.">
+                                    <p>Extra Payment (RM)</p>
+                                    <input type="number" id="extraPayment" placeholder="Extra Payment" title="Enter any additional payment amount in RM. This represents any extra amount you plan to pay towards the loan each month.">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn" id="btnSubmitTesting" value="Calculate" onclick="calculateMortgage()">
+                        <input type="button" class="btnClear" value="Clear" onclick="clearForm()">
+                    </form>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="content">
+                    <div class="contentFlex">
+                        <div class="content-item">
+                            <p>Loan Amount: <br /><span id="loanAmountOutput"></span></p>
+                        </div>
+                        <div class="content-item">
+                            <p>Interest Rate: <br /><span id="interestRateOutput"></span></p>
+                        </div>
+                        <div class="content-item">
+                            <p>Interest Rate (Monthly): <br /><span id="monthlyInterestRateOutput"></span></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="contentFlex">
+                            <div class="contentLeft">
+                                <div class="content-item">
+                                    <p>Monthly Mortgage Payment: <br /><span id="monthlyPayment"></span></p>
+                                </div>
+                                <div class="content-item">
+                                    <p>Total Repayment Amount: <br /><span id="totalRepayment"></span></p>
+                                </div>
+                                <div class="content-item">
+                                    <p>Total Interest Paid: <br /><span id="totalInterestPaid"></span></p>
+                                </div>
+                            </div>
+                            <div class="contentRight">
+                                <div class="content-item">
+                                    <p>Loan Amount After Down Payment: <br /><span id="loanAmountAfterDownPayment"></span></p>
+                                </div>
+                                <div class="content-item">
+                                    <p>Property Tax Payment: <br /><span id="propertyTaxPayment"></span></p>
+                                </div>
+                                <div class="content-item">
+                                    <p>Total Monthly Payment: <br /><span id="totalMonthlyPayment"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Muhammad Fikri. All rights reserved.</p>
+    </footer>
+</body>
+</html>
